@@ -4,6 +4,8 @@
 
 cmp-hledger completes based on prefix and prefix abbreviation (e.g. `E:D:C` to `Expenses:Drinks:Coffee`) of hledger account names.
 
+![Screen recording](https://i.imgur.com/5yS6GCZ.gif)
+
 ## Setup
 
 Prerequisites:
