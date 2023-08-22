@@ -6,29 +6,33 @@ cmp-hledger completes based on prefix and prefix abbreviation (e.g. `E:D:C` to `
 
 ## Setup
 
-Prerequisites:
+You will need [Neovim](https://neovim.io/) and [hledger](https://hledger.org/) to be installed using whatever method you prefer. To install these packages using yay, run:
 
 ```shell
 yay -S neovim hledger
 ```
 
-Install with your favorite package manager:
+You will also need [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) to be installed and configured.
+
+Now, install `cmp-hledger` with your favorite package manager for Neovim. For example, if you're using the [`packer.nvim`](https://github.com/wbthomason/packer.nvim) package manager, add this line to the configuration of Neovim:
 
 ```lua
 use('kirasok/cmp-hledger')
 ```
 
-Then, setup completion source:
+Then, configure `nvim-cmp` to include `cmp-hledger` as a source, using configuration like this:
 
 ```lua
-require('cmp').setup {
-  sources = {
+-- Set configuration for .ledger files
+cmp.setup.filetype('ledger', {
+  sources = cmp.config.sources({
     {
       name = 'hledger',
     }
-  }
-}
+  })
+})
 ```
+
 
 ## [ledger](https://github.com/ledger/ledger) support
 
